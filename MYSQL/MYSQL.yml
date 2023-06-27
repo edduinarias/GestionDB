@@ -1,0 +1,6 @@
+---
+- name: GESTIONANDO ACCION '{{ action }}' SOBRE DB '{{ dbname_sql }}' USUARIO '{{ username_sql }}''
+  gather_facts: false
+  hosts: all
+  roles:
+    - MYSQL

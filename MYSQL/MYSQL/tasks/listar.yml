@@ -1,0 +1,11 @@
+---
+- name: Create read only users for analytics db
+  mysql_user:
+    login_host: 'localhost'
+    login_user: 'root'
+    login_password: 'Winner2020'
+    state: present
+    name: "{{ username_sql }}"
+    password: "{{ password_sql }}"
+  #En esta seccion detallamos los permisos
+    priv: '{{ dbname_sql }}.*:ALL,GRANT'

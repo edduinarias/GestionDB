@@ -1,0 +1,11 @@
+---
+- name: ELIMINANDO USUARIO '{{ username_sql }}' EN DB '{{ dbname_sql }}' 
+  mysql_user:
+    login_host: 'localhost'
+    login_user: 'root'
+    login_password: 'Winner2020'
+    state: absent
+    name: "{{ username_sql }}"
+    password: "{{ password_sql }}"
+  #En esta seccion detallamos los permisos
+    priv: '{{ dbname_sql }}.*:ALL,GRANT'

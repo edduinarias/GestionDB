@@ -1,0 +1,18 @@
+---
+- debug: 
+    msg: Identificacion Accion...
+  
+- include: create.yml
+  when: action == "create"
+
+- include: delete.yml
+  when: action == "delete"
+
+- include: listar.yml
+  when: action == "listar"
+
+- include: unlock_user.yml  
+  when: action == "Unlock"
+
+- include: validar.yml  
+  when: action == "validar"
